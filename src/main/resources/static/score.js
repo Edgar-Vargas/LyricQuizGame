@@ -14,3 +14,13 @@ addEventListener("DOMContentLoaded", (event) => {
     localStorage.clear();
 
 });
+
+const redirectTest = document.querySelector(".redirect");
+ 
+redirectTest.addEventListener('click', e => {
+    console.log("redirect");
+    const currentURL = window.location.origin;
+    window.location.replace(currentURL+"/home");
+
+
+});
