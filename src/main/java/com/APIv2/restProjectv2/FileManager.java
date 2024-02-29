@@ -25,8 +25,8 @@ public class FileManager {
 
     
     // private static final String FOLDER_PATH = "C:\\workspace\\rest-Projectv2\\SwimmingLyrics";
-    private static final String FOLDER_PATH = "LyricQuizGame\\rest-Projectv2\\SwimmingLyrics";
-
+    private static final String FOLDER_PATH = "SwimmingLyrics";
+    
     private static final int CUT_OFF = 3;
    
     public ArrayList<Song> fileStorageGetter(String folderPath) {
