@@ -37,16 +37,12 @@ public class SongControllerTest {
     @GetMapping("/tester")
     public String viewHomePage(Model model ){
         model.addAttribute("listSongs", songService.getAllSongs());
-        // Song controlSong = new Song("controller tester", "these are the lyrics today");
         ArrayList<Song> copyContainer = dataHelper(); 
         for(int i = 0; i < copyContainer.size(); i++){
             Song newSong = copyContainer.get(i);
-            //TODO readd 100%
-            // songService.saveSong(newSong);
+
         }
-        // songService.saveSong(controlSong);
-        return "tester";
-        
+        return "tester";    
     }
 
     @GetMapping("/home")
@@ -55,8 +51,6 @@ public class SongControllerTest {
 		songContainer = mainTest.fileStorageGetter(FOLDER_PATH);
         songContainer = mainTest.fileStorageGetter(FOLDER_PATH);
 
-       
-
         return "home";
     }
     @GetMapping("/")
@@ -64,8 +58,6 @@ public class SongControllerTest {
         FileManager mainTest = new FileManager();
 		songContainer = mainTest.fileStorageGetter(FOLDER_PATH);
         songContainer = mainTest.fileStorageGetter(FOLDER_PATH);
-
-       
 
         return "home";
     }

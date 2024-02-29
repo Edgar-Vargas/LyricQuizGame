@@ -1,5 +1,5 @@
 const parent = document.querySelector(".parent");
-const redirectTest = document.querySelector(".redirect");
+const redirect = document.querySelector(".redirect");
 
 
 //when page is loaded, insert question number 
@@ -83,8 +83,13 @@ $('.SubmitButton').click(function(){
          console.log("correct answer " + localStorage.getItem('score'));
          
       }
-     
-     
+});
+
+redirectTest.addEventListener('click', e => {
+    console.log("redirect");
+    const currentURL = window.location.origin;
+    window.location.replace(currentURL+"/home");
+
 
 });
 

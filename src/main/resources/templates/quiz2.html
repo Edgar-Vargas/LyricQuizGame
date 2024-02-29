@@ -8,7 +8,7 @@
 	<meta name="viewport"
 		content="width=device-width, initial-scale=1.0">
 	<title>
-		Build a Survey Form using HTML and CSS
+		Quiz
 	</title>
 	<script src="https://code.jquery.com/jquery-3.7.1.min.js" 
 	integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" 
@@ -44,14 +44,28 @@
 		</button> 
 	</form>
 	
-	<!-- <button class = "clearStorage" >clear local storage</button> -->
+	<p id="home" class="redirect">Home</p>
 </body>
 
 <!-- get script after loading body elements in html page -->
 <script src="testFile.js"></script>
 
+<script src="score.js"></script>
+
 
 <style>
+
+	#home{
+        text-decoration: none;
+        color: black;
+        font-size: 25px;
+
+    }
+
+	#home:hover{
+		color: white;
+		cursor: pointer;
+	}
 	/* Styling the Body element 
 	i.e. Color, Font, Alignment */
 	body {
@@ -115,6 +129,14 @@
 		margin-top: 50px;
 		margin-bottom: 20px;
 	}
+	.SubmitButton{
+		margin-top: 25px;
+
+	}
+	.SubmitButton:hover, #WhatToUpdate:hover{
+		cursor:pointer;
+	}
+
 </style>
 
 </html>
