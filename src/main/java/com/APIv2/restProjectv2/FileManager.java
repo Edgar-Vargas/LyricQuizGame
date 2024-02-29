@@ -182,8 +182,6 @@ public String getRandomFileName(String folderPath){
         String randomSongName = "";
 
         fileArray = getFileArray(folderPath);
-        // fileNames = getFileNames(fileArray);
-
 
         for(String currentFile : fileArray){
             currentFile = currentFile.substring(0, currentFile.indexOf("."));
