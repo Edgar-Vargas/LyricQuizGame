@@ -59,7 +59,16 @@ public class SongControllerTest {
 
         return "home";
     }
+    @GetMapping("")
+    public String viewMacPageAlt() {
+        FileManager mainTest = new FileManager();
+		songContainer = mainTest.fileStorageGetter(FOLDER_PATH);
+        songContainer = mainTest.fileStorageGetter(FOLDER_PATH);
 
+       
+
+        return "home";
+    }
     @GetMapping("/score")
     public String viewScore(){
 
