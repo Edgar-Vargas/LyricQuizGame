@@ -16,7 +16,7 @@ import com.APIv2.restProjectv2.model.Song;
 
 
 @SpringBootApplication
-public class RestProjectv2Application {
+public class LyricGameMain {
 	private static final String FOLDER_PATH = "C:\\workspace\\rest-Projectv2\\SwimmingLyrics";
 	//original song container
 	static ArrayList<Song> songContainer = new ArrayList();
@@ -25,7 +25,7 @@ public class RestProjectv2Application {
 	// private SongController songController = new SongController();
 	public static void main(String[] args) {
 		
-		SpringApplication.run(RestProjectv2Application.class, args);
+		SpringApplication.run(LyricGameMain.class, args);
 		
 		FileManager mainTest = new FileManager();
 		songContainer = mainTest.fileStorageGetter(FOLDER_PATH);
