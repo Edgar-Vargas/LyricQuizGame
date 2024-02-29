@@ -1,5 +1,5 @@
 const parent = document.querySelector(".parent");
-const redirect = document.querySelector(".redirect");
+const redirectTest = document.querySelector(".redirect");
 
 
 //when page is loaded, insert question number 
@@ -88,12 +88,6 @@ $('.SubmitButton').click(function(){
 
 });
 
-redirect.addEventListener('click', e => {
-       
-    const currentURL = window.location.href;
-    window.location.replace(currentURL+"/quiz2");
 
-
-});
 
 
