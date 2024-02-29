@@ -70,7 +70,7 @@ public class FileManager {
 
         try {
             
-            BufferedReader reader = new BufferedReader(new FileReader("C:\\workspace\\rest-Projectv2\\SwimmingLyrics\\" + songFileName));
+            BufferedReader reader = new BufferedReader(new FileReader("SwimmingLyrics\\" + songFileName));
             String line;
             //assign next line to var in while statement since pointer moves with readLine()
             while((line = reader.readLine()) != null){
@@ -123,7 +123,7 @@ public  Map<String, String> getMap( ArrayList<String> fileArray )throws IOExcept
         StringBuilder result = new StringBuilder();
         try {
             
-            BufferedReader reader = new BufferedReader(new FileReader("C:\\workspace\\rest-Projectv2\\RandomLyrics\\" + currentFile));
+            BufferedReader reader = new BufferedReader(new FileReader("RandomLyrics\\" + currentFile));
 
             boolean firstLoop = true;
             //assign next line to var in while statement since pointer moves with readLine()
