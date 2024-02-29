@@ -26,8 +26,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 
 @Controller
 public class SongControllerTest {
-    private static final String FOLDER_PATH = "C:\\workspace\\rest-Projectv2\\SwimmingLyrics";
-    private static String RANDOMLYRICS_PATH = "C:\\workspace\\rest-Projectv2\\RandomLyrics";
+    private static final String FOLDER_PATH = "LyricQuizGame\\rest-Projectv2\\SwimmingLyrics";
+    private static String RANDOMLYRICS_PATH = "LyricQuizGame\\rest-Projectv2\\RandomLyrics";
     static ArrayList<Song> songContainer = new ArrayList();
 	//copy of song container with chosen random lyrics 
 	static ArrayList<Song> copyContainer = new ArrayList<>();

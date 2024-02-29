@@ -32,7 +32,7 @@ public class dataService {
 
         try {
             
-            BufferedReader reader = new BufferedReader(new FileReader("C:\\workspace\\rest-Projectv2\\SwimmingLyrics\\So It Goes.txt"));
+            BufferedReader reader = new BufferedReader(new FileReader("LyricQuizGame\\rest-Projectv2\\SwimmingLyrics\\So It Goes.txt"));
             String line;
             //assign next line to var in while statement since pointer moves with readLine()
             while((line = reader.readLine()) != null){
