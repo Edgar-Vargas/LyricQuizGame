@@ -59,7 +59,7 @@ public class SongControllerTest {
 
         return "home";
     }
-    @GetMapping("")
+    @GetMapping("/")
     public String viewMacPageAlt() {
         FileManager mainTest = new FileManager();
 		songContainer = mainTest.fileStorageGetter(FOLDER_PATH);
