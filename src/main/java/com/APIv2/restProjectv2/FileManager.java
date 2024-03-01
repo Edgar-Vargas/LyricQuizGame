@@ -16,6 +16,8 @@ import com.APIv2.restProjectv2.data.LineSelect;
 import com.APIv2.restProjectv2.data.SaveRandomFile;
 import com.APIv2.restProjectv2.model.Song;
 
+import org.apache.commons.lang3.StringUtils;
+
 
 public class FileManager {
     @Autowired
@@ -78,6 +80,8 @@ public class FileManager {
             
                 //check for the cutoff and if line contains brackets indicating text that are not lyrics
                 if((splitLine.length > CUT_OFF) && ((!line.contains("["))|| (!line.contains("]")) )){
+                    //filter out accent marks on current line 
+                    line = StringUtils.stripAccents(line);
                     //gets added to the lyric array that will be used for comparing 
                     lyricsArray.add(line);
                 }

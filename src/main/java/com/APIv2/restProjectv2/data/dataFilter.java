@@ -14,58 +14,33 @@
 // import com.APIv2.restProjectv2.controller.SongControllerTest;
 // import com.APIv2.restProjectv2.model.Song;
 
-// public class dataService {
+// public class dataFilter {
  
-//     public dataService(){
+//     public dataFilter(){
     
-//         main();
-//     }
-    
-//     public static Song main(){
-//         ArrayList<String> lyricArray = new ArrayList<>();
-//         ArrayList<String> filteredArray = new ArrayList<>();
-//         Song newSong = new Song();
-
-      
-
-
-
-//         try {
-            
-//             BufferedReader reader = new BufferedReader(new FileReader("LyricQuizGame\\rest-Projectv2\\SwimmingLyrics\\So It Goes.txt"));
-//             String line;
-//             //assign next line to var in while statement since pointer moves with readLine()
-//             while((line = reader.readLine()) != null){
-//                lyricArray.add(line);
-//                 // System.out.println(line);
-//             }
-//             reader.close();
-//             filteredArray = filterBySize(lyricArray);
-//             // filteredArray = filterByRepeats(filteredArray);
         
-//         } catch (IOException e) {
-//             // TODO Auto-generated catch block
-//             e.printStackTrace();
-//         }
-
-//         for(int i = 0; i < filteredArray.size(); i++){
-//             System.out.println(filteredArray.get(i));
-//         }
-
-//         //get text file name
-//         newSong.setSongName("");
-//         newSong.setLyrics("");
-//         return newSong;
 //     }
 
+//     public String filter(int numberOfLines, ArrayList<String> lyricsArray){
 
+//         String randomLyrics = "";
+//          //iterate through songList 
+//          for(int i = 0; i < numberOfLines; i++){
+      
+//              //get random lyric line from lyric array and insert it into its own array 
+//              randomLyrics = randomLyrics + lyricsArray.get(random) + "\n";
+ 
+//          }
+ 
+//          return randomLyrics; 
+//      }
+ 
+ 
 //     static ArrayList<String> filterBySize(ArrayList<String> lyricArray){
 //         //cut off variable for minumum amount of words in a line 
 //         int cutOff = 3;
 //         //array to return
 //         ArrayList<String> filteredArray = new ArrayList<>();
-    
-
    
 //         for(String line : lyricArray){
 //             //TODO replace puncuation marks with blank space?
