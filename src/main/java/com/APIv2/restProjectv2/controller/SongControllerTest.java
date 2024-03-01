@@ -114,10 +114,6 @@ public class SongControllerTest {
         Song controlSong = new Song("controller tester", "these are the lyrics today");
         FileManager mainTest = new FileManager();
 		songContainer = mainTest.fileStorageGetter(FOLDER_PATH);
-		
-		System.out.println(songContainer.size());
-
-
 
         return songContainer;
     }

@@ -10,7 +10,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import com.APIv2.restProjectv2.FileManager;
 // import com.APIv2.restProjectv2.controller.SongController;
 import com.APIv2.restProjectv2.data.LineSelect;
-import com.APIv2.restProjectv2.data.dataService;
+// import com.APIv2.restProjectv2.data.dataService;
 // import com.APIv2.restProjectv2.data.databaseService;
 import com.APIv2.restProjectv2.model.Song;
 
@@ -29,9 +29,6 @@ public class LyricGameMain {
 		
 		FileManager mainTest = new FileManager();
 		songContainer = mainTest.fileStorageGetter(FOLDER_PATH);
-		
-		System.out.println(songContainer.size());
-
 	
 	}
 

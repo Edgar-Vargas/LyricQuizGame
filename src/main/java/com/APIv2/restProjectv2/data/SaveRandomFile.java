@@ -8,7 +8,6 @@ import java.util.Map;
 public class SaveRandomFile {
     File dir = new File("RandomLyrics");
     public void writeToFile(Map<String, String> randomMap){
-        System.out.println("SIZE OF MAP: " + randomMap.size());
         try{
             for (Map.Entry<String,String> entry : randomMap.entrySet()){
                 

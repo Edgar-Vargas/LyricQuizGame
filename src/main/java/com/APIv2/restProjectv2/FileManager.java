@@ -38,7 +38,6 @@ public class FileManager {
 
         for(File file : files){
             if(file.isFile()){
-                // System.out.println("File = " + file.getName());
                 fileArray.add(file.getName());
                 Song songToAdd = storeSongs(file.getName());
                 songArray.add(songToAdd);
@@ -53,9 +52,9 @@ public class FileManager {
 
         SaveRandomFile saveRandomFile = new SaveRandomFile();
         saveRandomFile.writeToFile(randomMap);
-        for (Map.Entry<String,String> entry : randomMap.entrySet())  
-        System.out.println("Key = " + entry.getKey() + 
-                         ", Value = " + entry.getValue());
+        // for (Map.Entry<String,String> entry : randomMap.entrySet())  
+        // System.out.println("Key = " + entry.getKey() + 
+        //                  ", Value = " + entry.getValue());
         return songArray;
     }
 
@@ -142,7 +141,6 @@ public  Map<String, String> getMap( ArrayList<String> fileArray )throws IOExcept
             // TODO Auto-generated catch block
             e.printStackTrace();
         }
-        // System.out.println("Current Song is " + currentFile + "/n" + currentLyrics);
         currentFile = currentFile.substring(0, currentFile.indexOf("."));
         mapWithRandom.put(currentFile, result.toString());
     }
@@ -160,7 +158,6 @@ public ArrayList<String> getFileArray(String folderPath){
     try{
         for(File file : files){
             if(file.isFile()){
-                // System.out.println("File = " + file.getName());
                 fileArray.add(file.getName());
             }
             else{
@@ -194,7 +191,7 @@ public String getRandomFileName(String folderPath){
         }
         
 
-        //delete from folder after adding random song to not add repeats? 
+        //delete from folder after adding random song to not add repeats
         File fileToDelete = new File(folderPath + "/" + randomSongName + ".txt");
         if(fileToDelete.exists()){
             fileToDelete.delete();
@@ -215,16 +212,11 @@ public String getRandomFileName(String folderPath){
             currentFile = currentFile.substring(0, currentFile.indexOf("."));
             fileNames.add(currentFile);
 
-           
-
         }
 
         return fileNames;
 
     }
-
-
-
 
     
 }
