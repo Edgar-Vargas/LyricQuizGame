@@ -60,7 +60,7 @@ public class FileManager {
         return songArray;
     }
 
-
+//store songs in a folder
  public Song storeSongs(String songFileName){
         
         //arraylist for song lyrics in Song object
@@ -105,7 +105,7 @@ public class FileManager {
         return newSong;
     }
 
-
+//returns a map of file list to controller that uses getFiles helper method to retrieve a list to put into the map
 public  Map<String, String> getFiles(String folderPath )throws IOException{
        
      Map<String, String> mapWithRandom = new HashMap<String, String>();
@@ -116,7 +116,7 @@ public  Map<String, String> getFiles(String folderPath )throws IOException{
     return mapWithRandom;  
 }
 
-
+//returns a map with the song names as keys and random lyrics as their value
 public  Map<String, String> getMap( ArrayList<String> fileArray )throws IOException{ 
     
     Map<String, String> mapWithRandom = new HashMap<String, String>();
@@ -152,7 +152,7 @@ public  Map<String, String> getMap( ArrayList<String> fileArray )throws IOExcept
 
     }
 
-
+//helper method that gets all the files in a folder
 public ArrayList<String> getFileArray(String folderPath){
         String line = "";
         ArrayList<String> fileArray = new ArrayList();
@@ -176,7 +176,7 @@ public ArrayList<String> getFileArray(String folderPath){
 
         return fileArray;
     }
-
+//returns a random file from the album folder and then deletes it from the folderpath to avoid repeats
 public String getRandomFileName(String folderPath){
         ArrayList<String> fileArray = new ArrayList<>();
         ArrayList<String> fileNames = new ArrayList<>();
@@ -203,7 +203,7 @@ public String getRandomFileName(String folderPath){
 
         return randomSongName;
     }
-
+    //returns a full list of the songs in the album folder
     public ArrayList<String> getFullList(String folderPath){
         ArrayList<String> fileArray = new ArrayList<>();
         ArrayList<String> fileNames = new ArrayList<>();
