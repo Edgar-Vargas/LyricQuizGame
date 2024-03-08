@@ -8,9 +8,6 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
-import org.springframework.beans.factory.annotation.Autowired;
-
-// import com.APIv2.restProjectv2.Service.SongService;
 import com.APIv2.restProjectv2.controller.SongControllerTest;
 import com.APIv2.restProjectv2.data.LineSelect;
 import com.APIv2.restProjectv2.data.SaveRandomFile;
@@ -29,6 +26,8 @@ public class FileManager {
     private static final int CUT_OFF = 3;
    
     //ArrayList<Song>
+    //fileStorageGetter
+    //iterates through album folder and calls store songs to retrieve song with randomly selected lyrics
     public void fileStorageGetter(String folderPath) {
         clearFolder();
         ArrayList<String> fileArray = new ArrayList();
@@ -53,13 +52,10 @@ public class FileManager {
 
         SaveRandomFile saveRandomFile = new SaveRandomFile();
         saveRandomFile.writeToFile(randomMap);
-        // for (Map.Entry<String,String> entry : randomMap.entrySet())  
-        // System.out.println("Key = " + entry.getKey() + 
-        //                  ", Value = " + entry.getValue());
-        // return songArray;
+   
     }
 
-//store songs in a folder
+//store songs in a RandomLyrics folder
 //TODO check for empty file 
  public Song storeSongs(String songFileName, String folderPath){
         

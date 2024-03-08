@@ -120,14 +120,5 @@ public class SongControllerTest {
        
         return "quiz2";
     }
-  
-    @GetMapping("/showSongForm") 
-    public String showNewSongForm(Model model){
-        Song song = new Song();
-        model.addAttribute("song", song);
-        return "new_song";
-        
-
-    }
 
 }
