@@ -1,7 +1,8 @@
 addEventListener("DOMContentLoaded", (event) => {
 
+    //subtract 1 from questioncount here since localstorage(questionCount) is started at 2 instead of 1
     var scoreText = document.createTextNode("Final Score is " + localStorage.getItem('score')+ 
-    "/" + localStorage.getItem('questionCount'));
+    "/" + (Number(localStorage.getItem('questionCount')) -1));
    
     var scoreResult = document.getElementById("ScoreResult");
 

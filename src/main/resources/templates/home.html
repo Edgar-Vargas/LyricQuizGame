@@ -16,7 +16,14 @@
 
 
 </head>
-<p id=home class="redirect" >Start Quiz</p>
+<h1 id="header_title" >LYRIC QUIZ </h1>
+<div class="selections">
+	<p id=home class="redirect" >Swimming Quiz</p>
+
+	<p id=quiz_circles class="Circles" >Circles Quiz</p>
+
+</div>
+
 <body>
 	
 </body>
@@ -34,33 +41,47 @@
 		text-decoration: none;
 		color: black;
 	}
+	#header_title{
+		align-content: center;
+    letter-spacing: .05em;
+	font-size: 40px;
+    font-family: "nyt-franklin";
+	margin-top: 5%;
+	}
 
-	#home{
-		border: 5px;
-		border-radius: 5px;
-		border-style: solid;
-		background-color: aliceblue;
-		border-color: white;
-		padding: 15px;
-		
-		color: black;
-		text-decoration: none;
-		font-size: 50px;
-		
-		display: block;
-		left: 0;
-    	line-height: 200px;
-   	 	margin-top: -100px;
-    	position: absolute;
-    	text-align: center;
-    	top: 50%;
-    	width: 100%;
+	.selections{
+		/* line-height: 200px; */
+   	 	margin-top: 7%;
+	}
+
+	p#quiz_circles {
+    margin-top: 10px;
+}
+	#home, #quiz_circles{
+	position: relative;
+    border: none;
+    height: 3em;
+    border-radius: 1.5em;
+    align-content: center;
+    letter-spacing: .05em;
+    font-size: 16px;
+    font-family: "nyt-franklin";
+    line-height: 40px;
+    cursor: pointer;
+    padding: 0 2em;
+    background: #000;
+    color: #fff;
+    /* margin: 0 10px 8px; */
+    font-weight: 400;
+	width: 25%;
+	margin: auto;
+	
 		
 	}
 
-	#home:hover{
-		border-color: aqua;
-		color: teal;
+	#home:hover, #quiz_circles:hover{
+		color: aqua;
+		/* color: teal; */
 		cursor: pointer;
 
 	

@@ -26,22 +26,21 @@ public class FileManager {
     private  Map<String, String> randomMap = new HashMap<String, String>();
 
     
-    // private static final String FOLDER_PATH = "C:\\workspace\\rest-Projectv2\\SwimmingLyrics";
-    private static final String FOLDER_PATH = "SwimmingLyrics";
-    
     private static final int CUT_OFF = 3;
    
-    public ArrayList<Song> fileStorageGetter(String folderPath) {
+    //ArrayList<Song>
+    public void fileStorageGetter(String folderPath) {
+        clearFolder();
         ArrayList<String> fileArray = new ArrayList();
         ArrayList<Song> songArray = new ArrayList<>();
 
-        File  folder = new File(FOLDER_PATH);
+        File  folder = new File(folderPath);
         File[] files = folder.listFiles();
 
         for(File file : files){
             if(file.isFile()){
                 fileArray.add(file.getName());
-                Song songToAdd = storeSongs(file.getName());
+                Song songToAdd = storeSongs(file.getName(), folderPath);
                 songArray.add(songToAdd);
             }
             else{
@@ -57,11 +56,12 @@ public class FileManager {
         // for (Map.Entry<String,String> entry : randomMap.entrySet())  
         // System.out.println("Key = " + entry.getKey() + 
         //                  ", Value = " + entry.getValue());
-        return songArray;
+        // return songArray;
     }
 
 //store songs in a folder
- public Song storeSongs(String songFileName){
+//TODO check for empty file 
+ public Song storeSongs(String songFileName, String folderPath){
         
         //arraylist for song lyrics in Song object
         ArrayList<String> lyricsArray = new ArrayList<>();
@@ -71,7 +71,7 @@ public class FileManager {
 
         try {
             
-            BufferedReader reader = new BufferedReader(new FileReader("SwimmingLyrics/" + songFileName));
+            BufferedReader reader = new BufferedReader(new FileReader(folderPath +"/" + songFileName));
             String line;
             //assign next line to var in while statement since pointer moves with readLine()
             while((line = reader.readLine()) != null){
@@ -152,7 +152,7 @@ public  Map<String, String> getMap( ArrayList<String> fileArray )throws IOExcept
 
     }
 
-//helper method that gets all the files in a folder
+//helper method that gets all the files in a folder 
 public ArrayList<String> getFileArray(String folderPath){
         String line = "";
         ArrayList<String> fileArray = new ArrayList();
@@ -196,6 +196,7 @@ public String getRandomFileName(String folderPath){
         
 
         //delete from folder after adding random song to not add repeats
+        System.out.println("folderpath is " + folderPath +"/"+ randomSongName+".txt");
         File fileToDelete = new File(folderPath + "/" + randomSongName + ".txt");
         if(fileToDelete.exists()){
             fileToDelete.delete();
@@ -203,6 +204,7 @@ public String getRandomFileName(String folderPath){
 
         return randomSongName;
     }
+
     //returns a full list of the songs in the album folder
     public ArrayList<String> getFullList(String folderPath){
         ArrayList<String> fileArray = new ArrayList<>();
@@ -220,6 +222,23 @@ public String getRandomFileName(String folderPath){
 
         return fileNames;
 
+    }
+
+    public void clearFolder(){
+        String testFolder = "RandomLyrics";
+        ArrayList<String> fileArray = new ArrayList<>();
+
+        fileArray = getFileArray(testFolder);
+
+        for(String currentFile : fileArray){
+           
+    
+        File fileToDelete = new File(testFolder + "/" + currentFile);
+        if(fileToDelete.exists()){
+            fileToDelete.delete();
+        }
+
+        }
     }
 
     

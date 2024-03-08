@@ -34,30 +34,32 @@ public class SongControllerTest {
 
     @Autowired
     private SongService songService;
-    @GetMapping("/tester")
-    public String viewHomePage(Model model ){
-        model.addAttribute("listSongs", songService.getAllSongs());
-        ArrayList<Song> copyContainer = dataHelper(); 
-        for(int i = 0; i < copyContainer.size(); i++){
-            Song newSong = copyContainer.get(i);
+    // @GetMapping("/tester")
+    // public String viewHomePage(Model model ){
+    //     model.addAttribute("listSongs", songService.getAllSongs());
+    //     ArrayList<Song> copyContainer = dataHelper(); 
+    //     for(int i = 0; i < copyContainer.size(); i++){
+    //         Song newSong = copyContainer.get(i);
 
-        }
-        return "tester";    
-    }
+    //     }
+    //     return "tester";    
+    // }
 
     @GetMapping("/home")
     public String viewMacPage() {
         FileManager mainTest = new FileManager();
-		songContainer = mainTest.fileStorageGetter(FOLDER_PATH);
-        songContainer = mainTest.fileStorageGetter(FOLDER_PATH);
+        mainTest.clearFolder();
+        // songContainer = mainTest.fileStorageGetter(FOLDER_PATH);
 
         return "home";
     }
     @GetMapping("/")
     public String viewMacPageAlt() {
         FileManager mainTest = new FileManager();
-		songContainer = mainTest.fileStorageGetter(FOLDER_PATH);
-        songContainer = mainTest.fileStorageGetter(FOLDER_PATH);
+        mainTest.clearFolder();
+        // FileManager mainTest = new FileManager();
+		// songContainer = mainTest.fileStorageGetter(FOLDER_PATH);
+        // songContainer = mainTest.fileStorageGetter(FOLDER_PATH);
 
         return "home";
     }
@@ -66,6 +68,45 @@ public class SongControllerTest {
 
         return "score";
     }
+    @GetMapping("/quiz1")
+    public String viewQuestion1(Model model, Model array, Model fullSongList ){
+        String cirlcesPath = "Circles_Lyrics";
+        FileManager maintest = new FileManager();
+        Map<String, String> data = new HashMap<>();
+        ArrayList<String> arrayNames = new ArrayList<>();
+        ArrayList<String> fullList = new ArrayList<>();
+
+        String songName = "";
+
+        File f= new File(RANDOMLYRICS_PATH);
+        File check = new File(cirlcesPath);
+        File[] listOfFiles = f.listFiles(); 
+        File[] checkAgainstAlbum = check.listFiles(); 
+
+        if(listOfFiles.length == 0){
+            maintest.fileStorageGetter(cirlcesPath);
+        }
+        try {
+            
+            data = maintest.getFiles(RANDOMLYRICS_PATH);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        //get full list of songs in album folder
+        fullList = maintest.getFullList(cirlcesPath);
+        //get a random file to pull for the lyrics
+        songName = maintest.getRandomFileName(RANDOMLYRICS_PATH);
+        //get the song name that the current random lyrics belong to
+        arrayNames.add(songName);
+        
+        array.addAttribute("nameArray", arrayNames);
+        model.addAttribute("data", data);
+        fullSongList.addAttribute("fullList", fullList);
+        
+       
+        return "quiz1";
+    }
+  
     
     @GetMapping("/quiz2")
     public String viewQuestion2(Model model, Model array, Model fullSongList ){
@@ -75,13 +116,24 @@ public class SongControllerTest {
         ArrayList<String> fullList = new ArrayList<>();
 
         String songName = "";
+        File f= new File(RANDOMLYRICS_PATH);
+        File check = new File(FOLDER_PATH);
+        File[] listOfFiles = f.listFiles(); 
+        File[] checkAgainstAlbum = check.listFiles(); 
+
+        if(listOfFiles.length == 0){
+            maintest.fileStorageGetter(FOLDER_PATH);
+        }
         try {
             data = maintest.getFiles(RANDOMLYRICS_PATH);
         } catch (IOException e) {
             e.printStackTrace();
         }
+        //get full list of songs in album folder
         fullList = maintest.getFullList(FOLDER_PATH);
+        //get a random file to pull for the lyrics
         songName = maintest.getRandomFileName(RANDOMLYRICS_PATH);
+        //get the song name that the current random lyrics belong to
         arrayNames.add(songName);
         
         array.addAttribute("nameArray", arrayNames);
@@ -110,12 +162,12 @@ public class SongControllerTest {
         return "redirect:tester";
     }
 
-    public static ArrayList<Song> dataHelper(){
-        Song controlSong = new Song("controller tester", "these are the lyrics today");
-        FileManager mainTest = new FileManager();
-		songContainer = mainTest.fileStorageGetter(FOLDER_PATH);
+    // public static ArrayList<Song> dataHelper(){
+    //     Song controlSong = new Song("controller tester", "these are the lyrics today");
+    //     FileManager mainTest = new FileManager();
+	// 	songContainer = mainTest.fileStorageGetter(FOLDER_PATH);
 
-        return songContainer;
-    }
+    //     return songContainer;
+    // }
     
 }
