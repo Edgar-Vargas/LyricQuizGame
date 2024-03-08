@@ -4,23 +4,16 @@ import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.LinkedHashMap;
 import java.util.Map;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
 
 import com.APIv2.restProjectv2.FileManager;
-import com.APIv2.restProjectv2.Service.SongService;
-import com.APIv2.restProjectv2.data.LineSelect;
 import com.APIv2.restProjectv2.model.Song;
 
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
+
 
 
 
@@ -31,19 +24,6 @@ public class SongControllerTest {
     static ArrayList<Song> songContainer = new ArrayList();
 	//copy of song container with chosen random lyrics 
 	static ArrayList<Song> copyContainer = new ArrayList<>();
-
-    @Autowired
-    private SongService songService;
-    // @GetMapping("/tester")
-    // public String viewHomePage(Model model ){
-    //     model.addAttribute("listSongs", songService.getAllSongs());
-    //     ArrayList<Song> copyContainer = dataHelper(); 
-    //     for(int i = 0; i < copyContainer.size(); i++){
-    //         Song newSong = copyContainer.get(i);
-
-    //     }
-    //     return "tester";    
-    // }
 
     @GetMapping("/home")
     public String viewMacPage() {
@@ -57,9 +37,6 @@ public class SongControllerTest {
     public String viewMacPageAlt() {
         FileManager mainTest = new FileManager();
         mainTest.clearFolder();
-        // FileManager mainTest = new FileManager();
-		// songContainer = mainTest.fileStorageGetter(FOLDER_PATH);
-        // songContainer = mainTest.fileStorageGetter(FOLDER_PATH);
 
         return "home";
     }
@@ -144,7 +121,6 @@ public class SongControllerTest {
         return "quiz2";
     }
   
-
     @GetMapping("/showSongForm") 
     public String showNewSongForm(Model model){
         Song song = new Song();
@@ -154,20 +130,4 @@ public class SongControllerTest {
 
     }
 
-    @PostMapping("/saveSong")
-    public String saveSong(@ModelAttribute("song") Song song) {
-        //TODO: process POST request
-        songService.saveSong(song);
-        
-        return "redirect:tester";
-    }
-
-    // public static ArrayList<Song> dataHelper(){
-    //     Song controlSong = new Song("controller tester", "these are the lyrics today");
-    //     FileManager mainTest = new FileManager();
-	// 	songContainer = mainTest.fileStorageGetter(FOLDER_PATH);
-
-    //     return songContainer;
-    // }
-    
 }

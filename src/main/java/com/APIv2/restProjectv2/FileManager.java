@@ -10,7 +10,7 @@ import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 
-import com.APIv2.restProjectv2.Service.SongService;
+// import com.APIv2.restProjectv2.Service.SongService;
 import com.APIv2.restProjectv2.controller.SongControllerTest;
 import com.APIv2.restProjectv2.data.LineSelect;
 import com.APIv2.restProjectv2.data.SaveRandomFile;
@@ -20,8 +20,8 @@ import org.apache.commons.lang3.StringUtils;
 
 
 public class FileManager {
-    @Autowired
-    SongService songService;
+    // @Autowired
+    // SongService songService;
 
     private  Map<String, String> randomMap = new HashMap<String, String>();
 
