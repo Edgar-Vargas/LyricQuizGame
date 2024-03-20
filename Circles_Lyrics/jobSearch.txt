@@ -1,0 +1,19 @@
+full stack NOT Canonical NOT Varsity TUtors NOT Dice
+
+
+make website to display screenshots and video of program? 
+make project that can use in wha jobs are looking for
+
+635
+
+
+rename scrapeALbum to webCrawler to grab end link for api call to grab album
+
+new method to iterate through album
+song lyric path is in the 2nd child 
+each song name is child in tr 1,2,3, however many songs 
+
+method to pull data from each lyric page
+
+
+method to add alhbum to database 

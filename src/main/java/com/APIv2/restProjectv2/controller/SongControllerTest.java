@@ -42,7 +42,7 @@ public class SongControllerTest {
     }
     @GetMapping("/score")
     public String viewScore(){
-
+        
         return "score";
     }
     @GetMapping("/quiz1")
