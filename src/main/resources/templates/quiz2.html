@@ -20,6 +20,7 @@
 <body>
 	<h3 id="QuestionHeader">Quiz</h3>
 	<h1 class="parent" id="prompt" th:text ="${data[nameArray[0]]}" ></h1>
+	<!--Used for JS vars-->
 	<input type="hidden" id="AnswerName" th:value="${nameArray[0]}"/>
 	<input type="hidden" id="MapSize" th:value="${fullList.size}"/>
 

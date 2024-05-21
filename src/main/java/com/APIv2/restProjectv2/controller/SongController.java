@@ -18,7 +18,7 @@ import org.springframework.ui.Model;
 
 
 @Controller
-public class SongControllerTest {
+public class SongController {
     private static final String FOLDER_PATH = "SwimmingLyrics";
     private static String RANDOMLYRICS_PATH = "RandomLyrics";
     static ArrayList<Song> songContainer = new ArrayList();

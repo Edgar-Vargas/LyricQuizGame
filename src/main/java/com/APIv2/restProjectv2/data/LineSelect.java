@@ -5,7 +5,13 @@ import java.util.ArrayList;
 import com.APIv2.restProjectv2.model.Song;
 
 public class LineSelect {
-
+    /**
+     * Returns a string of a chosen amount of randomly selected lyrics.
+     * The lyrics are passed in as an array since lyrics in songs are usually seperated through line breaks/pauses as opposed to punctuation
+     * @param numberOfLines number of total random lines to select
+     * @param lyricsArray array that contains lyric lines for an individual song
+     * @return
+     */
     public String selectLines(int numberOfLines, ArrayList<String> lyricsArray){
 
        String randomLyrics = "";
@@ -21,7 +27,5 @@ public class LineSelect {
 
         return randomLyrics; 
     }
-
-
     
 }

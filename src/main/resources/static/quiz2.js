@@ -20,19 +20,10 @@ addEventListener("DOMContentLoaded", (event) => {
     questionElement.appendChild(questionText);
     document.body.insertBefore(questionElement, parent)
 
-    if((localStorage.getItem('questionCount'))>=numberOfSongs){
-        console.log("in m1");
-        var finalQuestionButton = document.getElementById("SubmitButtonId");
-        finalQuestionButton.value = "Submit Quiz";
-       
-    }
     numberOfSongs = Number(numberOfSongs.value);
-    console.log(localStorage.getItem('questionCount'));
-    console.log(numberOfSongs);
+
     //+1 since questioncount is started at 2 
-    if((localStorage.getItem('questionCount'))>=numberOfSongs + 1 ){
-        console.log("final question m2");
-        console.log(numberOfSongs.value);
+    if((localStorage.getItem('questionCount')) >= numberOfSongs + 1 ){
         var finalQuestionButton = document.getElementById("SubmitButtonId");
         finalQuestionButton.value = "Submit Quiz";
         location.href = "score";
@@ -74,8 +65,6 @@ $('.SubmitButton').click(function(){
          localStorage["score"] = 0;
      }
  
-    //  console.log("current question is " + localStorage.getItem("questionCount") );
-     console.log(answer.value)
       if(playerGuess === answer.value){
         var attempts = (parseInt(localStorage.getItem('score'))+1);
         localStorage.setItem("score", attempts.toString());
@@ -83,13 +72,7 @@ $('.SubmitButton').click(function(){
       }
 });
 
-// redirectTest.addEventListener('click', e => {
-//     console.log("redirect");
-//     const currentURL = window.location.origin;
-//     window.location.replace(currentURL+"/home");
 
-
-// });
 
 
 
