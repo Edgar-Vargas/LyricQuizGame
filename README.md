@@ -63,7 +63,8 @@ Update scores and question counts based on user interactions.
 ### 8. Score HTML and JavaScript
 The Score HTML and JavaScript classes display the final score of the quiz and allow users to return to the home page.
 
-
+### 9. Song Controller 
+The SongController class is a Spring Boot controller responsible for handling HTTP GET requests related to song lyrics and quiz functionality. It interacts with a FileManager class to perform various file operations, such as clearing folders, retrieving files, and getting random file names.
 ## Dependencies
 
 - Spring Boot: Used to create and run the API application.
