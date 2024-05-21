@@ -5,16 +5,11 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
-
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
-
 import com.APIv2.restProjectv2.FileManager;
 import com.APIv2.restProjectv2.model.Song;
-
 import org.springframework.ui.Model;
-
-
 
 
 @Controller
@@ -25,26 +20,18 @@ public class SongController {
 	//copy of song container with chosen random lyrics 
 	static ArrayList<Song> copyContainer = new ArrayList<>();
 
-    @GetMapping("/home")
-    public String viewMacPage() {
+    @GetMapping({"/home", "/"})
+    public String viewHomePage() {
         FileManager mainTest = new FileManager();
         mainTest.clearFolder();
-        // songContainer = mainTest.fileStorageGetter(FOLDER_PATH);
-
         return "home";
     }
-    @GetMapping("/")
-    public String viewMacPageAlt() {
-        FileManager mainTest = new FileManager();
-        mainTest.clearFolder();
-
-        return "home";
-    }
+  
     @GetMapping("/score")
-    public String viewScore(){
-        
+    public String viewScore(){    
         return "score";
     }
+    
     @GetMapping("/quiz1")
     public String viewQuestion1(Model model, Model array, Model fullSongList ){
         String cirlcesPath = "Circles_Lyrics";
@@ -52,13 +39,10 @@ public class SongController {
         Map<String, String> data = new HashMap<>();
         ArrayList<String> arrayNames = new ArrayList<>();
         ArrayList<String> fullList = new ArrayList<>();
-
         String songName = "";
 
-        File f= new File(RANDOMLYRICS_PATH);
-        File check = new File(cirlcesPath);
+        File f = new File(RANDOMLYRICS_PATH);
         File[] listOfFiles = f.listFiles(); 
-        File[] checkAgainstAlbum = check.listFiles(); 
 
         if(listOfFiles.length == 0){
             maintest.fileStorageGetter(cirlcesPath);
@@ -80,19 +64,17 @@ public class SongController {
         model.addAttribute("data", data);
         fullSongList.addAttribute("fullList", fullList);
         
-       
         return "quiz1";
     }
   
-    
     @GetMapping("/quiz2")
     public String viewQuestion2(Model model, Model array, Model fullSongList ){
         FileManager maintest = new FileManager();
         Map<String, String> data = new HashMap<>();
         ArrayList<String> arrayNames = new ArrayList<>();
         ArrayList<String> fullList = new ArrayList<>();
-
         String songName = "";
+        
         File f= new File(RANDOMLYRICS_PATH);
         File check = new File(FOLDER_PATH);
         File[] listOfFiles = f.listFiles(); 
@@ -117,7 +99,6 @@ public class SongController {
         model.addAttribute("data", data);
         fullSongList.addAttribute("fullList", fullList);
         
-       
         return "quiz2";
     }
 

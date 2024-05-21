@@ -191,7 +191,6 @@ public String getRandomFileName(String folderPath){
         
 
         //delete from folder after adding random song to not add repeats
-        System.out.println("folderpath is " + folderPath +"/"+ randomSongName+".txt");
         File fileToDelete = new File(folderPath + "/" + randomSongName + ".txt");
         if(fileToDelete.exists()){
             fileToDelete.delete();
