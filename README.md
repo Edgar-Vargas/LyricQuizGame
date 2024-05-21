@@ -63,27 +63,11 @@ Update scores and question counts based on user interactions.
 ### 8. Score HTML and JavaScript
 The Score HTML and JavaScript classes display the final score of the quiz and allow users to return to the home page.
 
-## Usage
-
-1. Start the Lyric Game API by running the `LyricGameMain` class.
-2. Use the `FileManager` class to manage song files and lyrics.
-3. Utilize the `SaveRandomFile` class to save randomly selected lyrics to files.
-4. Use the `LineSelect` class to select random lines from a list of lyrics.
 
 ## Dependencies
 
 - Spring Boot: Used to create and run the API application.
 - Apache Commons Lang: Utilized for string manipulation utilities.
 
-## Contributors
 
-- [Your Name]
-- [Your Organization]
 
-## License
-
-[License Information]
-
----
-
-Feel free to customize this README with additional details, such as installation instructions, API endpoints, or any other relevant information specific to your project.
