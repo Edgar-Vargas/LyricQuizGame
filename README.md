@@ -2,7 +2,7 @@ Here's a README for all the classes from our entire conversation:
 
 ---
 
-# Lyric Game API
+# Lyric Game 
 
 ## Overview
 
